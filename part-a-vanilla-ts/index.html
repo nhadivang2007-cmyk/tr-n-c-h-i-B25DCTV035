@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thư Viện Lớp Học - Vanilla TS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>📚 Thư Viện Lớp Học</h1>
+      <div class="header-right">
+        <span>Yêu thích: <strong id="fav-count">0</strong></span>
+        <button id="theme-toggle">🌓 Chế độ sáng/tối</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="toolbar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Tìm kiếm theo tên sách..."
+        />
+        <select id="genre-select">
+          <option value="">Tất cả thể loại</option>
+        </select>
+      </section>
+
+      <p id="status-bar" class="status-bar">Đang tải...</p>
+
+      <div id="book-grid" class="book-grid"></div>
+
+      <section class="form-section">
+        <h2>Thêm Sách Mới</h2>
+        <form id="add-book-form" novalidate>
+          <div class="form-group">
+            <label for="input-title">Tên sách:</label>
+            <input type="text" id="input-title" />
+            <small class="error-msg" id="error-title"></small>
+          </div>
+          <div class="form-group">
+            <label for="input-author">Tác giả:</label>
+            <input type="text" id="input-author" />
+            <small class="error-msg" id="error-author"></small>
+          </div>
+          <div class="form-group">
+            <label for="input-genre">Thể loại:</label>
+            <input
+              type="text"
+              id="input-genre"
+              placeholder="Nhập hoặc chọn thể loại"
+              list="genre-list"
+            />
+            <datalist id="genre-list"></datalist>
+            <small class="error-msg" id="error-genre"></small>
+          </div>
+          <div class="form-group">
+            <label for="input-year">Năm xuất bản:</label>
+            <input type="number" id="input-year" />
+            <small class="error-msg" id="error-year"></small>
+          </div>
+          <button type="submit" id="submit-btn">Thêm Sách</button>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
